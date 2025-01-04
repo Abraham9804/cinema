@@ -1,0 +1,17 @@
+:root{
+  --fuente: "Montserrat", serif;
+  --blanco: #fff;
+  --negro: #222;
+  --gris: #e2e2e2;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--fuente);
+}
+
+a{
+  text-decoration: none;
+}
