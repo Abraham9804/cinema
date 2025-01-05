@@ -1,12 +1,12 @@
 import {Routes, Route } from 'react-router-dom';
 import Inicio from './pages/inicio';
-import About from './pages/about';
+import Favoritos from './pages/favoritos';
 
 const AppRoutes = () => {
     return (     
             <Routes>
                 <Route path="/" element={<Inicio />}/>
-                <Route path="/about" element={<About />} />
+                <Route path="/favoritos" element={<Favoritos />} />
             </Routes>
     )
         
