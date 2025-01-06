@@ -3,6 +3,8 @@ import Header from './components/Header'
 import { BrowserRouter as Router } from 'react-router-dom'
 import AppRoutes from './routes'
 import Footer from './components/Footer'
+import {FavoritoContextoProvider} from './Contexto/Contexto'
+
 
 function App() {
   
@@ -10,9 +12,12 @@ function App() {
   return (
     <>
       <Router>
-        <Header />
-        <AppRoutes />
-        <Footer/>
+        <FavoritoContextoProvider>
+          <Header />
+              <AppRoutes />
+            
+          <Footer/>
+          </FavoritoContextoProvider>
       </Router>
          
         

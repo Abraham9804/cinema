@@ -5,7 +5,7 @@ import Titulo from "../../components/Titulo"
 import Videos from "./db.json"
 
 const CardContainer = styled.section`
-    width: 90%;
+    width: 100%;
     margin: auto;
     margin-bottom: 200px;
     display: flex;
