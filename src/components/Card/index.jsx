@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FaRegHeart, FaHeart  } from "react-icons/fa";
+import { useFavoritoContexto } from "../../Contexto/Contexto";
 
 const CardStyles = styled.article`
     width: 281px;
@@ -29,14 +30,19 @@ const ContainerImage = styled.div`
         background-size: cover;
 `
 
-const Card = ({titulo, capa}) => {
+const Card = ({id, titulo, capa}) => {
+
+    const {favorito, agregarFavorito} = useFavoritoContexto();
+    const isFavorito = favorito.some(fav => fav.id === id)
+    const Icon = isFavorito ? FaHeart : FaRegHeart
+
     return <CardStyles>
             <ContainerImage className="img" $capa={capa}>
 
             </ContainerImage>
             <div className="texto">
                 <h3>{titulo}</h3> 
-                <FaRegHeart color="white" fontSize="24"/> 
+                <Icon color="white" fontSize="24" onClick={()=>agregarFavorito({id, titulo, capa})}/> 
             </div>
             </CardStyles>
         
