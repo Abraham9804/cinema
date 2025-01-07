@@ -15,7 +15,6 @@ function App() {
         <FavoritoContextoProvider>
           <Header />
               <AppRoutes />
-            
           <Footer/>
           </FavoritoContextoProvider>
       </Router>
