@@ -4,6 +4,7 @@ import Titulo from "../../components/Titulo"
 import { useParams } from "react-router-dom"
 import Videos from "../inicio/db.json"
 import NotFound from "../notFound"
+import { useEffect, useState } from "react"
 
 const CardContainer = styled.section`
     width: 100%;
@@ -15,10 +16,18 @@ const CardContainer = styled.section`
     gap: 17px;
 `
 
-
 const Player = () => {
+    
     const parametros = useParams()
-    const videoSeleccionado = Videos.find(video => video.id === Number(parametros.id))
+    const [videoSeleccionado, setVideo] = useState({})
+    
+    useEffect(()=>{
+        fetch(`https://my-json-server.typicode.com/Abraham9804/cinema-api/videos?id=${parametros.id}`)
+        .then(response => response.json())
+        .then(data => setVideo(...data))
+        .catch(error => console.log(error))
+    },[])
+
     
     if(!videoSeleccionado){
         return <NotFound></NotFound>
