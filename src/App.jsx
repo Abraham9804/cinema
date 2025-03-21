@@ -13,10 +13,9 @@ function App() {
     <>
       <Router>
         <FavoritoContextoProvider>
-          <Header />
+            <Header />
               <AppRoutes />
-            
-          <Footer/>
+            <Footer/>
           </FavoritoContextoProvider>
       </Router>
          
